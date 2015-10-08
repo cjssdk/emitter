@@ -8,6 +8,7 @@
 	},
 	"repository": "stbsdk/emitter",
 	"scripts": {
+		"lint": "eslint *.js",
 		"jsdoc": "jsdoc --destination doc *.js readme.md",
 		"webpack": "webpack -d ./tests/main.js ./tests/build.js"
 	},
