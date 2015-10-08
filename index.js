@@ -72,6 +72,10 @@ Emitter.prototype = {
 	 *
 	 * @param {string} name event identifier
 	 * @param {function} callback function to call on this event
+	 *
+	 * @example
+	 * var obj = new Emitter();
+	 * obj.once('click', function ( data ) { ... });
 	 */
 	once: function ( name, callback ) {
 		// current execution context
@@ -100,7 +104,10 @@ Emitter.prototype = {
 	 *
 	 * @example
 	 * var obj = new Emitter();
-	 * obj.addListeners({click: function ( data ) {}, close: function ( data ) {}});
+	 * obj.addListeners({
+	 *     click: function ( data ) {},
+	 *     close: function ( data ) {}
+	 * });
 	 */
 	addListeners: function ( callbacks ) {
 		var name;
@@ -193,7 +200,7 @@ Emitter.prototype = {
 	 *
 	 * @example
 	 * obj.emit('init');
-	 * obj.emit('click', {src:panel1, dst:panel2});
+	 * obj.emit('click', {src: panel1, dst: panel2});
 	 *
 	 * // it's a good idea to emit event only when there are some listeners
 	 * if ( this.events['click'] ) {
