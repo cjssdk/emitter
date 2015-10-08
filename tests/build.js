@@ -328,6 +328,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__filename) {/**
+	 * @module stb-emitter
+	 *
 	 * @author Stanislav Kalashnik <sk@infomir.eu>
 	 * @license GNU GENERAL PUBLIC LICENSE Version 3
 	 */
@@ -401,6 +403,10 @@
 		 *
 		 * @param {string} name event identifier
 		 * @param {function} callback function to call on this event
+		 *
+		 * @example
+		 * var obj = new Emitter();
+		 * obj.once('click', function ( data ) { ... });
 		 */
 		once: function ( name, callback ) {
 			// current execution context
@@ -429,7 +435,10 @@
 		 *
 		 * @example
 		 * var obj = new Emitter();
-		 * obj.addListeners({click: function ( data ) {}, close: function ( data ) {}});
+		 * obj.addListeners({
+		 *     click: function ( data ) {},
+		 *     close: function ( data ) {}
+		 * });
 		 */
 		addListeners: function ( callbacks ) {
 			var name;
@@ -440,12 +449,9 @@
 				if ( Object.keys(callbacks).length === 0 ) { throw new Error(__filename + ': no callbacks given'); }
 			}
 	
-			// valid input
-			if ( typeof callbacks === 'object' ) {
-				for ( name in callbacks ) {
-					if ( callbacks.hasOwnProperty(name) ) {
-						this.addListener(name, callbacks[name]);
-					}
+			for ( name in callbacks ) {
+				if ( callbacks.hasOwnProperty(name) ) {
+					this.addListener(name, callbacks[name]);
 				}
 			}
 		},
@@ -472,11 +478,6 @@
 			if ( this.events[name] ) {
 				// rework the callback list to exclude the given one
 				this.events[name] = this.events[name].filter(function callbacksFilter ( fn ) { return fn !== callback; });
-				// event has no more callbacks so clean it
-				if ( this.events[name].length === 0 ) {
-					// as if there were no listeners at all
-					this.events[name] = undefined;
-				}
 			}
 		},
 	
@@ -522,7 +523,7 @@
 		 *
 		 * @example
 		 * obj.emit('init');
-		 * obj.emit('click', {src:panel1, dst:panel2});
+		 * obj.emit('click', {src: panel1, dst: panel2});
 		 *
 		 * // it's a good idea to emit event only when there are some listeners
 		 * if ( this.events['click'] ) {
