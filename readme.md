@@ -9,7 +9,7 @@ Events Emitter
 Almost all components in STB SDK emit events: a [Model](https://github.com/stbsdk/model) emits an event each time an attribute is set, a [router](https://github.com/stbsdk/router) emits an event when a page is opened.
 All components which emit events are instances of `Emitter`.
 
-Typically, event names are represented by a camel-cased string, however, there aren't any strict restrictions on that, as any string will be accepted.
+Typically, there aren't any strict restrictions on event names, as any string will be accepted. Usually it's a lowercase string with no spaces. Possible values: `click`, `move`, `focus:item`.
 
 Functions can then be attached to objects, to be executed when an event is emitted. These functions are called listeners. Inside a listener function, this refers to the `Emitter` that the listener was attached to.
 
@@ -89,6 +89,8 @@ if ( someEmitter.events['click'] ) {
     someEmitter.emit('click', {event: event});
 }
 ```
+
+In debug mode the constructor is exposed to the global namespace as `window.Emitter`.
 
 
 ## Contribution
