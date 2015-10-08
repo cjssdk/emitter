@@ -118,12 +118,9 @@ Emitter.prototype = {
 			if ( Object.keys(callbacks).length === 0 ) { throw new Error(__filename + ': no callbacks given'); }
 		}
 
-		// valid input
-		if ( typeof callbacks === 'object' ) {
-			for ( name in callbacks ) {
-				if ( callbacks.hasOwnProperty(name) ) {
-					this.addListener(name, callbacks[name]);
-				}
+		for ( name in callbacks ) {
+			if ( callbacks.hasOwnProperty(name) ) {
+				this.addListener(name, callbacks[name]);
 			}
 		}
 	},
@@ -150,11 +147,6 @@ Emitter.prototype = {
 		if ( this.events[name] ) {
 			// rework the callback list to exclude the given one
 			this.events[name] = this.events[name].filter(function callbacksFilter ( fn ) { return fn !== callback; });
-			// event has no more callbacks so clean it
-			if ( this.events[name].length === 0 ) {
-				// as if there were no listeners at all
-				this.events[name] = undefined;
-			}
 		}
 	},
 
