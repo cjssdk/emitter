@@ -35,11 +35,66 @@ Create an instance:
 var someEmitter = new Emitter();
 ```
 
+Add listeners for some events:
+
+```js
+someEmitter.addListener('click', function ( data ) { ... });
+someEmitter.addListener('click', function ( data ) { ... });
+```
+
+Add listener that will be notified only one time:
+
+```js
+someEmitter.once('click', function ( data ) { ... });
+```
+
+Add multiple listeners at once:
+
+```js
+someEmitter.addListeners({
+    click: function ( data ) {},
+    close: function ( data ) {}
+});
+```
+
+Remove all instances of the given callback:
+
+```js
+someEmitter.removeListener('click', func1);
+```
+
+Remove all callbacks for the given event name:
+
+```js
+someEmitter.removeListener('click');
+```
+
+Clears all events:
+
+```js
+someEmitter.removeListener();
+```
+
+Execute each of the listeners in the given order with the supplied arguments:
+
+```js
+someEmitter.emit('init');
+someEmitter.emit('click', {src: panel1, dst: panel2});
+```
+
+It's a good idea to emit event only when there are some listeners:
+
+```js
+if ( someEmitter.events['click'] ) {
+    someEmitter.emit('click', {event: event});
+}
+```
+
 
 ## Contribution
 
 If you have any problem or suggestion please open an issue [here](https://github.com/stbsdk/emitter/issues).
-Pull requests are welcomed with respect to the [JavaScript Code Style](https://github.com/DarkPark/jscs) and included [ESLint](http://eslint.org/) rules.
+Pull requests are welcomed with respect to the [JavaScript Code Style](https://github.com/DarkPark/jscs).
 
 
 ## License
