@@ -90,6 +90,11 @@ if ( someEmitter.events['click'] ) {
 }
 ```
 
+
+## Debug mode
+
+> There is a global var `DEBUG` which activates additional consistency checks and protection logic not available in release mode.
+
 In debug mode the constructor is exposed to the global namespace as `window.Emitter`.
 
 
