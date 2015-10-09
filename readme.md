@@ -1,5 +1,5 @@
-Events Emitter
-==============
+STB SDK base events emitter implementation
+==========================================
 
 [![NPM version](https://img.shields.io/npm/v/stb-emitter.svg?style=flat-square)](https://www.npmjs.com/package/stb-emitter)
 [![Dependencies Status](https://img.shields.io/david/stbsdk/emitter.svg?style=flat-square)](https://david-dm.org/stbsdk/emitter)
