@@ -13,6 +13,9 @@
  *
  * @see http://nodejs.org/api/events.html
  * @constructor
+ *
+ * @example
+ * var emitter = new Emitter();
  */
 function Emitter () {
 	if ( DEBUG ) {
@@ -49,10 +52,9 @@ Emitter.prototype = {
 	 * @param {function} callback function to call on this event
 	 *
 	 * @example
-	 * var obj = new Emitter();
-	 * obj.addListener('click', function ( data ) { ... });
+	 * emitter.addListener('click', function ( data ) { ... });
 	 * // one more click handler
-	 * obj.addListener('click', function ( data ) { ... });
+	 * emitter.addListener('click', function ( data ) { ... });
 	 */
 	addListener: function ( name, callback ) {
 		if ( DEBUG ) {
@@ -76,8 +78,7 @@ Emitter.prototype = {
 	 * @param {function} callback function to call on this event
 	 *
 	 * @example
-	 * var obj = new Emitter();
-	 * obj.once('click', function ( data ) { ... });
+	 * emitter.once('click', function ( data ) { ... });
 	 */
 	once: function ( name, callback ) {
 		// current execution context
@@ -105,8 +106,7 @@ Emitter.prototype = {
 	 * @param {Object} callbacks event names with callbacks
 	 *
 	 * @example
-	 * var obj = new Emitter();
-	 * obj.addListeners({
+	 * emitter.addListeners({
 	 *     click: function ( data ) {},
 	 *     close: function ( data ) {}
 	 * });
@@ -135,7 +135,7 @@ Emitter.prototype = {
 	 * @param {function} callback function to remove
 	 *
 	 * @example
-	 * obj.removeListener('click', func1);
+	 * emitter.removeListener('click', func1);
 	 */
 	removeListener: function ( name, callback ) {
 		if ( DEBUG ) {
@@ -160,8 +160,8 @@ Emitter.prototype = {
 	 * @param {string} [name] event identifier
 	 *
 	 * @example
-	 * obj.removeAllListeners('click');
-	 * obj.removeAllListeners();
+	 * emitter.removeAllListeners('click');
+	 * emitter.removeAllListeners();
 	 */
 	removeAllListeners: function ( name ) {
 		if ( DEBUG ) {
@@ -193,8 +193,8 @@ Emitter.prototype = {
 	 * @todo consider use context
 	 *
 	 * @example
-	 * obj.emit('init');
-	 * obj.emit('click', {src: panel1, dst: panel2});
+	 * emitter.emit('init');
+	 * emitter.emit('click', {src: panel1, dst: panel2});
 	 *
 	 * // it's a good idea to emit event only when there are some listeners
 	 * if ( this.events['click'] ) {

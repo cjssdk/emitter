@@ -32,26 +32,26 @@ var Emitter = require('stb-emitter');
 Create an instance:
 
 ```js
-var someEmitter = new Emitter();
+var emitter = new Emitter();
 ```
 
 Add listeners for some events:
 
 ```js
-someEmitter.addListener('click', function ( data ) { ... });
-someEmitter.addListener('click', function ( data ) { ... });
+emitter.addListener('click', function ( data ) { ... });
+emitter.addListener('click', function ( data ) { ... });
 ```
 
 Add listener that will be notified only one time:
 
 ```js
-someEmitter.once('click', function ( data ) { ... });
+emitter.once('click', function ( data ) { ... });
 ```
 
 Add multiple listeners at once:
 
 ```js
-someEmitter.addListeners({
+emitter.addListeners({
     click: function ( data ) {},
     close: function ( data ) {}
 });
@@ -60,33 +60,33 @@ someEmitter.addListeners({
 Remove all instances of the given callback:
 
 ```js
-someEmitter.removeListener('click', func1);
+emitter.removeListener('click', func1);
 ```
 
 Remove all callbacks for the given event name:
 
 ```js
-someEmitter.removeListener('click');
+emitter.removeListener('click');
 ```
 
 Clears all events:
 
 ```js
-someEmitter.removeListener();
+emitter.removeListener();
 ```
 
 Execute each of the listeners in the given order with the supplied arguments:
 
 ```js
-someEmitter.emit('init');
-someEmitter.emit('click', {src: panel1, dst: panel2});
+emitter.emit('init');
+emitter.emit('click', {src: panel1, dst: panel2});
 ```
 
 It's a good idea to emit event only when there are some listeners:
 
 ```js
-if ( someEmitter.events['click'] ) {
-    someEmitter.emit('click', {event: event});
+if ( emitter.events['click'] ) {
+    emitter.emit('click', {event: event});
 }
 ```
 
