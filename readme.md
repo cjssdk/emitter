@@ -82,10 +82,14 @@ emitter.emit('init');
 emitter.emit('click', {src: panel1, dst: panel2});
 ```
 
+
+## Performance notes
+
 It's a good idea to emit event only when there are some listeners:
 
 ```js
 if ( emitter.events['click'] ) {
+	// notify listeners
     emitter.emit('click', {event: event});
 }
 ```
