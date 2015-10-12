@@ -149,6 +149,11 @@ Emitter.prototype = {
 		if ( this.events[name] ) {
 			// rework the callback list to exclude the given one
 			this.events[name] = this.events[name].filter(function callbacksFilter ( fn ) { return fn !== callback; });
+			// event has no more callbacks so clean it
+			if ( this.events[name].length === 0 ) {
+				// as if there were no listeners at all
+				this.events[name] = undefined;
+			}
 		}
 	},
 
