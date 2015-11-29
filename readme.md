@@ -80,6 +80,7 @@ Execute each of the listeners in the given order with the supplied arguments:
 ```js
 emitter.emit('init');
 emitter.emit('click', {src: panel1, dst: panel2});
+emitter.emit('load', error, data);
 ```
 
 

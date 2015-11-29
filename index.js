@@ -93,8 +93,8 @@ Emitter.prototype = {
 		// initialization may be required
 		this.events[name] = this.events[name] || [];
 		// append this new event to the list
-		this.events[name].push(function onceWrapper ( data ) {
-			callback(data);
+		this.events[name].push(function onceWrapper () {
+			callback.apply(this, arguments);
 			self.removeListener(name, onceWrapper);
 		});
 	},
@@ -193,20 +193,18 @@ Emitter.prototype = {
 	 * Execute each of the listeners in the given order with the supplied arguments.
 	 *
 	 * @param {string} name event identifier
-	 * @param {Object} [data] options to send
-	 *
-	 * @todo consider use context
 	 *
 	 * @example
 	 * emitter.emit('init');
 	 * emitter.emit('click', {src: panel1, dst: panel2});
+	 * emitter.emit('load', error, data);
 	 *
 	 * // it's a good idea to emit event only when there are some listeners
 	 * if ( this.events['click'] ) {
 	 *     this.emit('click', {event: event});
 	 * }
 	 */
-	emit: function ( name, data ) {
+	emit: function ( name ) {
 		var event = this.events[name],
 			i;
 
@@ -227,8 +225,7 @@ Emitter.prototype = {
 				}
 
 				// invoke the callback with parameters
-				// http://jsperf.com/function-calls-direct-vs-apply-vs-call-vs-bind/6
-				event[i].call(this, data);
+				event[i].apply(this, Array.prototype.slice.call(arguments, 1));
 			}
 		}
 	}
