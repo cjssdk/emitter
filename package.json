@@ -1,27 +1,19 @@
 {
-	"name": "stb-emitter",
+	"name": "cjs-emitter",
 	"version": "1.4.0",
-	"description": "STB SDK base events emitter implementation.",
+	"description": "Basic events emitter implementation.",
 	"author": {
 		"name": "Stanislav Kalashnik",
 		"email": "sk@infomir.eu"
 	},
-	"repository": "stbsdk/emitter",
+	"repository": "cjssdk/emitter",
 	"scripts": {
-		"lint": "eslint *.js",
-		"jsdoc": "jsdoc --destination doc *.js readme.md",
-		"webpack": "webpack -d ./tests/main.js ./tests/build.js"
+		"lint": "eslint *.js"
 	},
-	"devDependencies": {
-		"jsdoc": "3.*.*",
-		"webpack": "1.*.*"
-	},
+	"devDependencies": {},
 	"keywords": [
-		"stb",
+		"commonjs",
 		"sdk",
-		"device",
-		"tv",
-		"devkit",
 		"framework",
 		"emitter"
 	],

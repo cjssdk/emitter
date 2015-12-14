@@ -1,12 +1,12 @@
-STB SDK base events emitter implementation
-==========================================
+Basic events emitter implementation
+===================================
 
-[![NPM version](https://img.shields.io/npm/v/stb-emitter.svg?style=flat-square)](https://www.npmjs.com/package/stb-emitter)
-[![Dependencies Status](https://img.shields.io/david/stbsdk/emitter.svg?style=flat-square)](https://david-dm.org/stbsdk/emitter)
+[![NPM version](https://img.shields.io/npm/v/cjs-emitter.svg?style=flat-square)](https://www.npmjs.com/package/cjs-emitter)
+[![Dependencies Status](https://img.shields.io/david/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/stb)
 
 
-Almost all components in STB SDK emit events: a [Model](https://github.com/stbsdk/model) emits an event each time an attribute is set, a [router](https://github.com/stbsdk/router) emits an event when a page is opened.
+Almost all components in STB SDK emit events: a [Model](https://github.com/cjssdk/model) emits an event each time an attribute is set, a [router](https://github.com/stbsdk/router) emits an event when a page is opened.
 All components which emit events are instances of `Emitter`.
 
 Typically, there aren't any strict restrictions on event names, as any string will be accepted. Usually it's a lowercase string with no spaces. Possible values: `click`, `move`, `focus:item`.
@@ -17,7 +17,7 @@ Functions can then be attached to objects, to be executed when an event is emitt
 ## Installation
 
 ```bash
-npm install stb-emitter
+npm install cjs-emitter
 ```
 
 
@@ -26,7 +26,7 @@ npm install stb-emitter
 Add the constructor to the scope:
 
 ```js
-var Emitter = require('stb-emitter');
+var Emitter = require('cjs-emitter');
 ```
 
 Create an instance:
@@ -105,10 +105,10 @@ In debug mode the constructor is exposed to the global namespace as `window.Emit
 
 ## Contribution
 
-If you have any problem or suggestion please open an issue [here](https://github.com/stbsdk/emitter/issues).
+If you have any problem or suggestion please open an issue [here](https://github.com/cjssdk/emitter/issues).
 Pull requests are welcomed with respect to the [JavaScript Code Style](https://github.com/DarkPark/jscs).
 
 
 ## License
 
-`stb-emitter` is released under the [GPL-3.0 License](http://opensource.org/licenses/GPL-3.0).
+`cjs-emitter` is released under the [GPL-3.0 License](http://opensource.org/licenses/GPL-3.0).
