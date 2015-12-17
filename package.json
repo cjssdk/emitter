@@ -14,6 +14,7 @@
 	"keywords": [
 		"commonjs",
 		"sdk",
+		"cjssdk",
 		"framework",
 		"emitter"
 	],
