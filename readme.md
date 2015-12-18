@@ -86,7 +86,7 @@ emitter.emit('load', error, data);
 
 ## Performance notes
 
-It's a good idea to emit event only when there are some listeners:
+It's a good idea to emit events only when there are some listeners:
 
 ```js
 if ( emitter.events['click'] ) {
