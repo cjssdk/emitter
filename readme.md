@@ -90,7 +90,7 @@ It's a good idea to emit event only when there are some listeners:
 
 ```js
 if ( emitter.events['click'] ) {
-	// notify listeners
+    // notify listeners
     emitter.emit('click', {event: event});
 }
 ```
