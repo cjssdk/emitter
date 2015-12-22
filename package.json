@@ -1,22 +1,22 @@
 {
-	"name": "cjs-emitter",
-	"version": "1.4.1",
-	"description": "Basic events emitter implementation.",
-	"author": {
-		"name": "Stanislav Kalashnik",
-		"email": "darkpark.main@gmail.com"
-	},
-	"repository": "cjssdk/emitter",
-	"scripts": {
-		"lint": "eslint ./*.js"
-	},
-	"devDependencies": {},
-	"keywords": [
-		"commonjs",
-		"sdk",
-		"cjssdk",
-		"framework",
-		"emitter"
-	],
-	"license": "GPL-3.0"
+    "name": "cjs-emitter",
+    "version": "1.4.1",
+    "description": "Basic events emitter implementation.",
+    "author": {
+        "name": "Stanislav Kalashnik",
+        "email": "darkpark.main@gmail.com"
+    },
+    "repository": "cjssdk/emitter",
+    "scripts": {
+        "lint": "eslint ./*.js"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "commonjs",
+        "sdk",
+        "cjssdk",
+        "framework",
+        "emitter"
+    ],
+    "license": "GPL-3.0"
 }
