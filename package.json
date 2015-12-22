@@ -8,9 +8,14 @@
     },
     "repository": "cjssdk/emitter",
     "scripts": {
-        "lint": "eslint ./*.js"
+        "lint": "eslint ./*.js",
+        "test": "node ./tests/main.js"
     },
-    "devDependencies": {},
+    "dependencies": {},
+    "devDependencies": {
+        "mocha": "2.*.*",
+        "should": "8.*.*"
+    },
     "keywords": [
         "commonjs",
         "sdk",
