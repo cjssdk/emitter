@@ -11,14 +11,14 @@ Typically, there aren't any strict restrictions on event names, as any string wi
 Functions can then be attached to objects, to be executed when an event is emitted. These functions are called listeners. Inside a listener function, this refers to the `Emitter` that the listener was attached to.
 
 
-## Installation
+## Installation ##
 
 ```bash
 npm install cjs-emitter
 ```
 
 
-## Usage
+## Usage ##
 
 Add the constructor to the scope:
 
@@ -81,7 +81,7 @@ emitter.emit('load', error, data);
 ```
 
 
-## Performance notes
+## Performance notes ##
 
 It's a good idea to emit events only when there are some listeners:
 
@@ -93,17 +93,17 @@ if ( emitter.events['click'] ) {
 ```
 
 
-## Debug mode
+## Debug mode ##
 
 > There is a global var `DEBUG` which activates additional consistency checks and protection logic not available in release mode.
 
 
-## Contribution
+## Contribution ##
 
 If you have any problem or suggestion please open an issue [here](https://github.com/cjssdk/emitter/issues).
 Pull requests are welcomed with respect to the [JavaScript Code Style](https://github.com/DarkPark/jscs).
 
 
-## License
+## License ##
 
 `cjs-emitter` is released under the [GPL-3.0 License](http://opensource.org/licenses/GPL-3.0).
