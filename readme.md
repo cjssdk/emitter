@@ -6,9 +6,6 @@ Basic events emitter implementation
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/cjssdk)
 
 
-Almost all components in STB SDK emit events: a [Model](https://github.com/cjssdk/model) emits an event each time an attribute is set, a [router](https://github.com/cjssdk/router) emits an event when a page is opened.
-All components which emit events are instances of `Emitter`.
-
 Typically, there aren't any strict restrictions on event names, as any string will be accepted. Usually it's a lowercase string with no spaces. Possible values: `click`, `move`, `focus:item`.
 
 Functions can then be attached to objects, to be executed when an event is emitted. These functions are called listeners. Inside a listener function, this refers to the `Emitter` that the listener was attached to.
