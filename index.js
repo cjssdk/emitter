@@ -94,7 +94,7 @@ Emitter.prototype = {
         this.events[name] = this.events[name] || [];
         // append this new event to the list
         this.events[name].push(function onceWrapper () {
-            callback.apply(this, arguments);
+            callback.apply(self, arguments);
             self.removeListener(name, onceWrapper);
         });
     },
@@ -170,7 +170,9 @@ Emitter.prototype = {
      */
     removeAllListeners: function ( name ) {
         if ( DEBUG ) {
-            if ( arguments.length !== 0 && (typeof name !== 'string' || name.length === 0) ) { throw new Error(__filename + ': wrong or empty name'); }
+            if ( arguments.length !== 0 && (typeof name !== 'string' || name.length === 0) ) {
+                throw new Error(__filename + ': wrong or empty name');
+            }
         }
 
         // check input
@@ -206,7 +208,7 @@ Emitter.prototype = {
      */
     emit: function ( name ) {
         var event = this.events[name],
-            i;
+            index;
 
         if ( DEBUG ) {
             if ( arguments.length < 1 ) { throw new Error(__filename + ': wrong arguments number'); }
@@ -219,13 +221,13 @@ Emitter.prototype = {
                 if ( !Array.isArray(event) ) { throw new Error(__filename + ': wrong event type'); }
             }
 
-            for ( i = 0; i < event.length; i++ ) {
+            for ( index = 0; index < event.length; index++ ) {
                 if ( DEBUG ) {
-                    if ( typeof event[i] !== 'function' ) { throw new Error(__filename + ': wrong event callback type'); }
+                    if ( typeof event[index] !== 'function' ) { throw new Error(__filename + ': wrong event callback type'); }
                 }
 
                 // invoke the callback with parameters
-                event[i].apply(this, Array.prototype.slice.call(arguments, 1));
+                event[index].apply(this, Array.prototype.slice.call(arguments, 1));
             }
         }
     }
