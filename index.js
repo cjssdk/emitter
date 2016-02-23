@@ -167,6 +167,8 @@ Emitter.prototype = {
      * @example
      * emitter.removeAllListeners('click');
      * emitter.removeAllListeners();
+     *
+     * @deprecated
      */
     removeAllListeners: function ( name ) {
         if ( DEBUG ) {
