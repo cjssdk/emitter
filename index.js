@@ -18,7 +18,7 @@
  * var emitter = new Emitter();
  */
 function Emitter () {
-    if ( DEBUG ) {
+    if ( DEVELOP ) {
         if ( typeof this !== 'object' ) { throw new Error(__filename + ': must be constructed via new'); }
     }
 
@@ -57,7 +57,7 @@ Emitter.prototype = {
      * emitter.addListener('click', function ( data ) { ... });
      */
     addListener: function ( name, callback ) {
-        if ( DEBUG ) {
+        if ( DEVELOP ) {
             if ( arguments.length !== 2 ) { throw new Error(__filename + ': wrong arguments number'); }
             if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
             if ( typeof callback !== 'function' ) { throw new Error(__filename + ': wrong callback type'); }
@@ -84,7 +84,7 @@ Emitter.prototype = {
         // current execution context
         var self = this;
 
-        if ( DEBUG ) {
+        if ( DEVELOP ) {
             if ( arguments.length !== 2 ) { throw new Error(__filename + ': wrong arguments number'); }
             if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
             if ( typeof callback !== 'function' ) { throw new Error(__filename + ': wrong callback type'); }
@@ -114,7 +114,7 @@ Emitter.prototype = {
     addListeners: function ( callbacks ) {
         var name;
 
-        if ( DEBUG ) {
+        if ( DEVELOP ) {
             if ( arguments.length !== 1 ) { throw new Error(__filename + ': wrong arguments number'); }
             if ( typeof callbacks !== 'object' ) { throw new Error(__filename + ': wrong callbacks type'); }
             if ( Object.keys(callbacks).length === 0 ) { throw new Error(__filename + ': no callbacks given'); }
@@ -138,7 +138,7 @@ Emitter.prototype = {
      * emitter.removeListener('click', func1);
      */
     removeListener: function ( name, callback ) {
-        if ( DEBUG ) {
+        if ( DEVELOP ) {
             if ( arguments.length !== 2 ) { throw new Error(__filename + ': wrong arguments number'); }
             if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
             if ( typeof callback !== 'function' ) { throw new Error(__filename + ': wrong callback type'); }
@@ -171,7 +171,7 @@ Emitter.prototype = {
      * @deprecated
      */
     removeAllListeners: function ( name ) {
-        if ( DEBUG ) {
+        if ( DEVELOP ) {
             if ( arguments.length !== 0 && (typeof name !== 'string' || name.length === 0) ) {
                 throw new Error(__filename + ': wrong or empty name');
             }
@@ -182,7 +182,7 @@ Emitter.prototype = {
             // no arguments so remove everything
             this.events = {};
         } else if ( name ) {
-            if ( DEBUG ) {
+            if ( DEVELOP ) {
                 if ( this.events[name] ) { throw new Error(__filename + ': event is not removed'); }
             }
 
@@ -212,19 +212,19 @@ Emitter.prototype = {
         var event = this.events[name],
             index;
 
-        if ( DEBUG ) {
+        if ( DEVELOP ) {
             if ( arguments.length < 1 ) { throw new Error(__filename + ': wrong arguments number'); }
             if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
         }
 
         // the event exists and should have some callbacks
         if ( event ) {
-            if ( DEBUG ) {
+            if ( DEVELOP ) {
                 if ( !Array.isArray(event) ) { throw new Error(__filename + ': wrong event type'); }
             }
 
             for ( index = 0; index < event.length; index++ ) {
-                if ( DEBUG ) {
+                if ( DEVELOP ) {
                     if ( typeof event[index] !== 'function' ) { throw new Error(__filename + ': wrong event callback type'); }
                 }
 
