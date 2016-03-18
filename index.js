@@ -18,9 +18,11 @@
  * var emitter = new Emitter();
  */
 function Emitter () {
-    if ( DEVELOP ) {
-        if ( typeof this !== 'object' ) { throw new Error(__filename + ': must be constructed via new'); }
-    }
+    console.assert(typeof this === 'object', 'must be constructed via new');
+
+    // if ( DEVELOP ) {
+    //     if ( typeof this !== 'object' ) { throw new Error(__filename + ': must be constructed via new'); }
+    // }
 
     /**
      * Inner hash table for event names and linked callbacks.
@@ -57,11 +59,16 @@ Emitter.prototype = {
      * emitter.addListener('click', function ( data ) { ... });
      */
     addListener: function ( name, callback ) {
-        if ( DEVELOP ) {
-            if ( arguments.length !== 2 ) { throw new Error(__filename + ': wrong arguments number'); }
-            if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
-            if ( typeof callback !== 'function' ) { throw new Error(__filename + ': wrong callback type'); }
-        }
+        console.assert(arguments.length === 2, 'wrong arguments number');
+        console.assert(typeof name === 'string', 'wrong name type');
+        console.assert(name.length > 0, 'empty name');
+        console.assert(typeof callback === 'function', 'callback should be a function');
+
+        // if ( DEVELOP ) {
+        //     if ( arguments.length !== 2 ) { throw new Error(__filename + ': wrong arguments number'); }
+        //     if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
+        //     if ( typeof callback !== 'function' ) { throw new Error(__filename + ': wrong callback type'); }
+        // }
 
         // initialization may be required
         this.events[name] = this.events[name] || [];
