@@ -177,7 +177,7 @@ Emitter.prototype = {
      *
      * @deprecated
      */
-    removeAllListeners: function ( name ) {
+    /*removeAllListeners: function ( name ) {
         if ( DEVELOP ) {
             if ( arguments.length !== 0 && (typeof name !== 'string' || name.length === 0) ) {
                 throw new Error(__filename + ': wrong or empty name');
@@ -197,7 +197,7 @@ Emitter.prototype = {
             // but object structure modification should be avoided
             this.events[name] = undefined;
         }
-    },
+    },*/
 
 
     /**
