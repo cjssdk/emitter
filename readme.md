@@ -11,6 +11,29 @@ Typically, there aren't any strict restrictions on event names, as any string wi
 Functions can then be attached to objects, to be executed when an event is emitted. These functions are called listeners. Inside a listener function, this refers to the `Emitter` that the listener was attached to.
 
 
+New suggestions (http://collabedit.com/m68wv):
+
+```js
+// add listener
+emitter.on('click', function ( event ) { /* ... */ });
+
+// add listener to be triggered only once
+emitter.once('click', function ( event ) { /* ... */ });
+
+// clear all listeners for all events
+emitter.events = {};
+
+// clear all listeners for some specific event
+emitter.events.click = [];
+
+// remove some specific callback for a specific event
+emitter.off('click', someCallback);
+
+// notify listeners
+emitter.emit('click');
+```
+
+
 ## Installation ##
 
 ```bash
