@@ -22,5 +22,5 @@
         "framework",
         "emitter"
     ],
-    "license": "GPL-3.0"
+    "license": "MIT"
 }
