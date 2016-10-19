@@ -5,34 +5,14 @@ Basic events emitter implementation
 [![NPM version](https://img.shields.io/npm/v/cjs-emitter.svg?style=flat-square)](https://www.npmjs.com/package/cjs-emitter)
 [![Dependencies Status](https://img.shields.io/david/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/cjssdk)
+[![RunKit](https://img.shields.io/badge/RunKit-try-yellow.svg?style=flat-square)](https://runkit.com/npm/cjs-emitter)
 
 
-Typically, there aren't any strict restrictions on event names, as any string will be accepted. Usually it's a lowercase string with no spaces. Possible values: `click`, `move`, `focus:item`.
+Typically, there are no strict restrictions on event names, as any string will be accepted.
+Usually it's a lowercase string with no spaces. Possible values: `click`, `move`, `focus:item`.
 
-Functions can then be attached to objects, to be executed when an event is emitted. These functions are called listeners. Inside a listener function, this refers to the `Emitter` that the listener was attached to.
-
-
-New suggestions (http://collabedit.com/m68wv):
-
-```js
-// add listener
-emitter.on('click', function ( event ) { /* ... */ });
-
-// add listener to be triggered only once
-emitter.once('click', function ( event ) { /* ... */ });
-
-// clear all listeners for all events
-emitter.events = {};
-
-// clear all listeners for some specific event
-emitter.events.click = [];
-
-// remove some specific callback for a specific event
-emitter.off('click', someCallback);
-
-// notify listeners
-emitter.emit('click');
-```
+Functions can then be attached to objects, to be executed when an event is emitted.
+These functions are called listeners. Inside a listener function, this refers to the `Emitter` that the listener was attached to.
 
 
 ## Installation ##
@@ -59,14 +39,14 @@ var emitter = new Emitter();
 Add listeners for some events:
 
 ```js
-emitter.addListener('click', function ( data ) { ... });
-emitter.addListener('click', function ( data ) { ... });
+emitter.addListener('click', function ( data ) { /* ... */ });
+emitter.addListener('click', function ( data ) { /* ... */ });
 ```
 
 Add listener that will be notified only one time:
 
 ```js
-emitter.once('click', function ( data ) { ... });
+emitter.once('click', function ( data ) { /* ... */ });
 ```
 
 Add multiple listeners at once:
