@@ -1,9 +1,10 @@
 Basic events emitter implementation
 ===================================
 
-[![Build Status](https://img.shields.io/travis/cjssdk/emitter.svg?style=flat-square)](https://travis-ci.org/cjssdk/emitter)
-[![NPM version](https://img.shields.io/npm/v/cjs-emitter.svg?style=flat-square)](https://www.npmjs.com/package/cjs-emitter)
-[![Dependencies Status](https://img.shields.io/david/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter)
+[![build status](https://img.shields.io/travis/cjssdk/emitter.svg?style=flat-square)](https://travis-ci.org/cjssdk/emitter)
+[![npm version](https://img.shields.io/npm/v/cjs-emitter.svg?style=flat-square)](https://www.npmjs.com/package/cjs-emitter)
+[![dependencies status](https://img.shields.io/david/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter)
+[![devDependencies status](https://img.shields.io/david/dev/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter?type=dev)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/cjssdk)
 [![RunKit](https://img.shields.io/badge/RunKit-try-yellow.svg?style=flat-square)](https://runkit.com/npm/cjs-emitter)
 
