@@ -92,9 +92,15 @@ Emitter.prototype = {
         var self = this;
 
         if ( DEVELOP ) {
-            if ( arguments.length !== 2 ) { throw new Error(__filename + ': wrong arguments number'); }
-            if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
-            if ( typeof callback !== 'function' ) { throw new Error(__filename + ': wrong callback type'); }
+            if ( arguments.length !== 2 ) {
+                throw new Error(__filename + ': wrong arguments number');
+            }
+            if ( typeof name !== 'string' || name.length === 0 ) {
+                throw new Error(__filename + ': wrong or empty name');
+            }
+            if ( typeof callback !== 'function' ) {
+                throw new Error(__filename + ': wrong callback type');
+            }
         }
 
         // initialization may be required
@@ -122,9 +128,15 @@ Emitter.prototype = {
         var name;
 
         if ( DEVELOP ) {
-            if ( arguments.length !== 1 ) { throw new Error(__filename + ': wrong arguments number'); }
-            if ( typeof callbacks !== 'object' ) { throw new Error(__filename + ': wrong callbacks type'); }
-            if ( Object.keys(callbacks).length === 0 ) { throw new Error(__filename + ': no callbacks given'); }
+            if ( arguments.length !== 1 ) {
+                throw new Error(__filename + ': wrong arguments number');
+            }
+            if ( typeof callbacks !== 'object' ) {
+                throw new Error(__filename + ': wrong callbacks type');
+            }
+            if ( Object.keys(callbacks).length === 0 ) {
+                throw new Error(__filename + ': no callbacks given');
+            }
         }
 
         for ( name in callbacks ) {
@@ -146,10 +158,18 @@ Emitter.prototype = {
      */
     removeListener: function ( name, callback ) {
         if ( DEVELOP ) {
-            if ( arguments.length !== 2 ) { throw new Error(__filename + ': wrong arguments number'); }
-            if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
-            if ( typeof callback !== 'function' ) { throw new Error(__filename + ': wrong callback type'); }
-            if ( this.events[name] && !Array.isArray(this.events[name]) ) { throw new Error(__filename + ': corrupted inner data'); }
+            if ( arguments.length !== 2 ) {
+                throw new Error(__filename + ': wrong arguments number');
+            }
+            if ( typeof name !== 'string' || name.length === 0 ) {
+                throw new Error(__filename + ': wrong or empty name');
+            }
+            if ( typeof callback !== 'function' ) {
+                throw new Error(__filename + ': wrong callback type');
+            }
+            if ( this.events[name] && !Array.isArray(this.events[name]) ) {
+                throw new Error(__filename + ': corrupted inner data');
+            }
         }
 
         // the event exists and should have some callbacks
@@ -220,19 +240,27 @@ Emitter.prototype = {
             index;
 
         if ( DEVELOP ) {
-            if ( arguments.length < 1 ) { throw new Error(__filename + ': wrong arguments number'); }
-            if ( typeof name !== 'string' || name.length === 0 ) { throw new Error(__filename + ': wrong or empty name'); }
+            if ( arguments.length < 1 ) {
+                throw new Error(__filename + ': wrong arguments number');
+            }
+            if ( typeof name !== 'string' || name.length === 0 ) {
+                throw new Error(__filename + ': wrong or empty name');
+            }
         }
 
         // the event exists and should have some callbacks
         if ( event ) {
             if ( DEVELOP ) {
-                if ( !Array.isArray(event) ) { throw new Error(__filename + ': wrong event type'); }
+                if ( !Array.isArray(event) ) {
+                    throw new Error(__filename + ': wrong event type');
+                }
             }
 
             for ( index = 0; index < event.length; index++ ) {
                 if ( DEVELOP ) {
-                    if ( typeof event[index] !== 'function' ) { throw new Error(__filename + ': wrong event callback type'); }
+                    if ( typeof event[index] !== 'function' ) {
+                        throw new Error(__filename + ': wrong event callback type');
+                    }
                 }
 
                 // invoke the callback with parameters
