@@ -107,8 +107,8 @@ Emitter.prototype = {
         this.events[name] = this.events[name] || [];
         // append this new event to the list
         this.events[name].push(function onceWrapper () {
-            callback.apply(self, arguments);
             self.removeListener(name, onceWrapper);
+            callback.apply(self, arguments);
         });
     },
 
