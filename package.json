@@ -1,5 +1,5 @@
 {
-    "name": "cjs-emitter",
+    "name": "@cjssdk/emitter",
     "version": "1.5.1",
     "description": "Basic events emitter implementation.",
     "author": {
@@ -22,6 +22,7 @@
     },
     "keywords": [
         "commonjs",
+        "cjs",
         "sdk",
         "cjssdk",
         "framework",
