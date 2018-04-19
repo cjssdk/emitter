@@ -1,6 +1,6 @@
 {
     "name": "@cjssdk/emitter",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "description": "Basic events emitter implementation.",
     "author": {
         "name": "Stanislav Kalashnik",
