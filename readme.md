@@ -2,11 +2,11 @@ Basic events emitter implementation
 ===================================
 
 [![build status](https://img.shields.io/travis/cjssdk/emitter.svg?style=flat-square)](https://travis-ci.org/cjssdk/emitter)
-[![npm version](https://img.shields.io/npm/v/@cjssdk/emitter.svg?style=flat-square)](https://www.npmjs.com/package/@cjssdk/emitter)
+[![npm version](https://img.shields.io/npm/v/cjs-emitter.svg?style=flat-square)](https://www.npmjs.com/package/cjs-emitter)
 [![dependencies status](https://img.shields.io/david/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter)
 [![devDependencies status](https://img.shields.io/david/dev/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter?type=dev)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/cjssdk)
-[![RunKit](https://img.shields.io/badge/RunKit-try-yellow.svg?style=flat-square)](https://npm.runkit.com/@cjssdk/emitter)
+[![RunKit](https://img.shields.io/badge/RunKit-try-yellow.svg?style=flat-square)](https://npm.runkit.com/cjs-emitter)
 
 
 Typically, there are no strict restrictions on event names, as any string will be accepted.
@@ -19,7 +19,7 @@ These functions are called listeners. Inside a listener function, this refers to
 ## Installation ##
 
 ```bash
-npm install @cjssdk/emitter
+npm install cjs-emitter
 ```
 
 
@@ -28,7 +28,7 @@ npm install @cjssdk/emitter
 Add the constructor to the scope:
 
 ```js
-var Emitter = require('@cjssdk/emitter');
+var Emitter = require('cjs-emitter');
 ```
 
 Create an instance:
@@ -111,4 +111,4 @@ according to the contribution [rules](.github/contributing.md).
 
 ## License ##
 
-`@cjssdk/emitter` is released under the [MIT License](license.md).
+`cjs-emitter` is released under the [MIT License](license.md).
