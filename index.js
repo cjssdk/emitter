@@ -271,9 +271,5 @@ Emitter.prototype = {
 };
 
 
-// correct constructor name
-Emitter.prototype.constructor = Emitter;
-
-
 // public
 module.exports = Emitter;
