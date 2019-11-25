@@ -50,8 +50,8 @@ Emitter.prototype = {
      * Bind an event to the given callback function.
      * The same callback function can be added multiple times for the same event name.
      *
-     * @param {string} name event identifier
-     * @param {function} callback function to call on this event
+     * @param {string} name - event identifier
+     * @param {Function} callback - function to call on this event
      *
      * @example
      * emitter.addListener('click', function ( data ) { ... });
@@ -81,8 +81,8 @@ Emitter.prototype = {
      * Add a one time listener for the event.
      * This listener is invoked only the next time the event is fired, after which it is removed.
      *
-     * @param {string} name event identifier
-     * @param {function} callback function to call on this event
+     * @param {string} name - event identifier
+     * @param {Function} callback - function to call on this event
      *
      * @example
      * emitter.once('click', function ( data ) { ... });
@@ -116,7 +116,7 @@ Emitter.prototype = {
     /**
      * Apply multiple listeners at once.
      *
-     * @param {Object} callbacks event names with callbacks
+     * @param {Object} callbacks - event names with callbacks
      *
      * @example
      * emitter.addListeners({
@@ -150,8 +150,8 @@ Emitter.prototype = {
     /**
      * Remove all instances of the given callback.
      *
-     * @param {string} name event identifier
-     * @param {function} callback function to remove
+     * @param {string} name - event identifier
+     * @param {Function} callback - function to remove
      *
      * @example
      * emitter.removeListener('click', func1);
@@ -223,7 +223,7 @@ Emitter.prototype = {
     /**
      * Execute each of the listeners in the given order with the supplied arguments.
      *
-     * @param {string} name event identifier
+     * @param {string} name - event identifier
      *
      * @example
      * emitter.emit('init');
